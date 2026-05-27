@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>URL Cloaker</title>
-      <meta name="description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
-      <meta name="author" content="Affan Shaikh">
-      <meta name="robots" content="noindex, nofollow">
-      <meta property="og:title" content="URL Cloaker">
-      <meta property="og:description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
-      <meta property="og:type" content="website">
-      <noscript>noscript</noscript>
-      <script>
-        var cloak = window.open();
-        cloak.document.open();
-        cloak.document.write(`<!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>URL Cloaker</title>
-      <meta name="description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
-      <meta name="author" content="Affan Shaikh">
-      <meta name="robots" content="noindex, nofollow">
-      <meta property="og:title" content="URL Cloaker">
-      <meta property="og:description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
-      <meta property="og:type" content="website">
-      <noscript>noscript</noscript>${(new URLSearchParams(window.location.search)).has("site")
-        ? ``
-        : `\n<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">`
-      }
-    </head>
-    <body>
-      ${(new URLSearchParams(window.location.search)).has("site")
-        ? `<iframe
-  src="${(new URLSearchParams(window.location.search)).get("site")"
-  allow="fullscreen; autoplay; clipboard-write; encrypted-media; geolocation; microphone; camera; payment; display-capture"
-  allowfullscreen
-  referrerpolicy="no-referrer"
-  style="width:100%; height:100vh; border:0;"
-></iframe>`
-        : `<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>`
-      }
-    </body>
-  </html>`;
-        cloak.document.close();
-      </script>
-    </head>
-    <body></body>
-  </html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      URL Cloaker
+    </title>
+    <meta name="description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
+    <meta name="author" content="Affan Shaikh">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="URL Cloaker">
+    <meta property="og:description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
+    <meta property="og:type" content="website">
+    <noscript>
+      noscript
+    </noscript>
+    <script>
+      var cloak=window.open(); cloak.document.open(); cloak.document.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width,initial-scale=1.0">
+          <title>
+            URL Cloaker
+          </title>
+          <meta name="description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
+          <meta name="author" content="Affan Shaikh">
+          <meta name="robots" content="noindex,nofollow">
+          <meta property="og:title" content="URL Cloaker">
+          <meta property="og:description" content="Cloaks any URL to allow you to visit any website by changing the URL to about:blank so blocking extensions cannot run on it. ">
+          <meta property="og:type" content="website">
+          <noscript>
+            noscript
+          </noscript>
+          ${( new URLSearchParams(window.location.search)).has("site")?``:`\n
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+          `}
+        </head>
+        <body>
+          ${( new URLSearchParams(window.location.search)).has("site")?`
+          <iframe src="${( new URLSearchParams(window.location.search)).get("site")}" allow="fullscreen;autoplay;clipboard-write;encrypted-media;geolocation;microphone;camera;payment;display-capture" allowfullscreen referrerpolicy="no-referrer" style="width:100%;height:100vh;border:0;">
+          </iframe>
+          `:`
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+            <\/script>
+              `}
+            </body>
+          </html>
+          `); cloak.document.close();
+        </script>
+      </head>
+      <body>
+      </body>
+    </html>
