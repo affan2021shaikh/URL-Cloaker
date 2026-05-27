@@ -16,7 +16,7 @@
       noscript
     </noscript>
     <script>
-      var cloak=window.open(); cloak.document.open(); cloak.document.write(`
+      var cloak=window.open('', '_blank'); cloak.document.open(); cloak.document.write(`
       <!DOCTYPE html>
       <html>
         <head>
@@ -48,7 +48,7 @@
               `}
             </body>
           </html>
-          `); cloak.document.close();
+          `); cloak.document.close(); window.close();
         </script>
       </head>
       <body>
